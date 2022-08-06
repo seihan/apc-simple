@@ -25,17 +25,6 @@ F 3 "http://www.ti.com/lit/ds/symlink/ne556.pdf" H 5350 4750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Timer:NE556 U1
-U 1 1 62810120
-P 5350 3300
-F 0 "U1" H 5350 2719 50  0000 C CNN
-F 1 "NE556" H 5350 2810 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 5350 3300 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/ne556.pdf" H 5350 3300 50  0001 C CNN
-	1    5350 3300
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+5V #PWR0101
 U 1 1 62C0E0C0
 P 4700 2550
@@ -97,13 +86,13 @@ $EndComp
 $Comp
 L Device:R R3
 U 1 1 62818D6F
-P 6100 3500
-F 0 "R3" H 6170 3546 50  0000 L CNN
-F 1 "1k" H 6170 3455 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P12.70mm_Horizontal" V 6030 3500 50  0001 C CNN
-F 3 "~" H 6100 3500 50  0001 C CNN
-	1    6100 3500
-	0    1    1    0   
+P 6050 3600
+F 0 "R3" H 6120 3646 50  0000 L CNN
+F 1 "1k" H 6120 3555 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P12.70mm_Horizontal" V 5980 3600 50  0001 C CNN
+F 3 "~" H 6050 3600 50  0001 C CNN
+	1    6050 3600
+	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	5850 3500 5900 3500
@@ -125,11 +114,8 @@ Wire Wire Line
 Wire Wire Line
 	4850 4050 5900 4050
 Wire Wire Line
-	5900 4050 5900 3500
+	5900 4050 5900 3600
 Connection ~ 4850 4050
-Connection ~ 5900 3500
-Wire Wire Line
-	5900 3500 5950 3500
 Wire Wire Line
 	4850 3500 4700 3500
 Wire Wire Line
@@ -161,12 +147,7 @@ Wire Wire Line
 Wire Wire Line
 	6250 3000 6250 3100
 Wire Wire Line
-	5850 3300 5900 3300
-Wire Wire Line
-	6200 3300 6250 3300
-Connection ~ 6250 3300
-Wire Wire Line
-	6250 3300 6250 3500
+	6250 3100 6400 3100
 $Comp
 L Device:R_POT RV2
 U 1 1 62C82018
@@ -319,11 +300,6 @@ $EndComp
 Wire Wire Line
 	6400 2850 6400 3100
 Wire Wire Line
-	6400 3100 6250 3100
-Connection ~ 6250 3100
-Wire Wire Line
-	6250 3100 6250 3300
-Wire Wire Line
 	6800 2850 6800 3100
 Wire Wire Line
 	6800 3100 6650 3100
@@ -377,4 +353,34 @@ Wire Wire Line
 	3950 4950 3950 5600
 Wire Wire Line
 	4300 2900 5850 2900
+Wire Wire Line
+	6300 3600 6200 3600
+Connection ~ 5900 3600
+Wire Wire Line
+	5900 3600 5900 3500
+$Comp
+L Timer:NE556 U1
+U 1 1 62810120
+P 5350 3300
+F 0 "U1" H 5350 2719 50  0000 C CNN
+F 1 "NE556" H 5350 2810 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket" H 5350 3300 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/ne556.pdf" H 5350 3300 50  0001 C CNN
+	1    5350 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 3400 6300 3600
+Wire Wire Line
+	5900 3400 6300 3400
+Wire Wire Line
+	5900 3400 5900 3300
+Wire Wire Line
+	5850 3300 5900 3300
+Connection ~ 5900 3300
+Wire Wire Line
+	6250 3100 6250 3300
+Wire Wire Line
+	6250 3300 6200 3300
+Connection ~ 6250 3100
 $EndSCHEMATC
