@@ -4,7 +4,7 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "APC Schematic"
+Title "APC Simple with LED"
 Date "2022-07-03"
 Rev "v1"
 Comp ""
@@ -140,14 +140,9 @@ Wire Wire Line
 Wire Wire Line
 	5850 3100 5850 2900
 Wire Wire Line
-	5850 2900 5350 2900
-Wire Wire Line
 	4300 2900 4300 4550
 Wire Wire Line
 	4300 4550 4850 4550
-Connection ~ 5350 2900
-Wire Wire Line
-	5350 2900 4300 2900
 $Comp
 L Device:R R1
 U 1 1 62818637
@@ -189,8 +184,6 @@ Wire Wire Line
 	6650 3000 6650 3100
 Wire Wire Line
 	4850 4950 4150 4950
-Wire Wire Line
-	4150 4950 4150 4650
 Wire Wire Line
 	4150 2550 4700 2550
 Wire Wire Line
@@ -293,7 +286,6 @@ Connection ~ 7600 4550
 Wire Wire Line
 	7600 5200 7600 5600
 Connection ~ 7600 5600
-Connection ~ 4150 4950
 Wire Wire Line
 	7600 4550 7950 4550
 Wire Wire Line
@@ -311,19 +303,6 @@ F 3 "~" H 8150 4550 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7950 4650 7950 5600
-$Comp
-L Device:Battery_Cell BT1
-U 1 1 62D5D59D
-P 4150 5500
-F 0 "BT1" H 4268 5596 50  0000 L CNN
-F 1 "Battery_Cell" H 4268 5505 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" V 4150 5560 50  0001 C CNN
-F 3 "~" V 4150 5560 50  0001 C CNN
-	1    4150 5500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4150 5300 4150 4950
 Wire Wire Line
 	6250 2550 6650 2550
 $Comp
@@ -354,37 +333,48 @@ Wire Wire Line
 $Comp
 L Device:LED D1
 U 1 1 62D79BD1
-P 3800 5200
-F 0 "D1" V 3839 5082 50  0000 R CNN
-F 1 "LED" V 3748 5082 50  0000 R CNN
-F 2 "LED_THT:LED_D5.0mm" H 3800 5200 50  0001 C CNN
-F 3 "~" H 3800 5200 50  0001 C CNN
-	1    3800 5200
+P 4150 5450
+F 0 "D1" V 4189 5332 50  0000 R CNN
+F 1 "LED" V 4098 5332 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" H 4150 5450 50  0001 C CNN
+F 3 "~" H 4150 5450 50  0001 C CNN
+	1    4150 5450
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:R R7
 U 1 1 62D7C0B3
-P 3800 4800
-F 0 "R7" H 3870 4846 50  0000 L CNN
-F 1 "330" H 3870 4755 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P12.70mm_Horizontal" V 3730 4800 50  0001 C CNN
-F 3 "~" H 3800 4800 50  0001 C CNN
-	1    3800 4800
+P 4150 5100
+F 0 "R7" H 4220 5146 50  0000 L CNN
+F 1 "330" H 4220 5055 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P12.70mm_Horizontal" V 4080 5100 50  0001 C CNN
+F 3 "~" H 4150 5100 50  0001 C CNN
+	1    4150 5100
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3800 5350 3800 5600
+	4150 5600 4600 5600
+Connection ~ 4150 4950
 Wire Wire Line
-	3800 5600 4150 5600
+	4150 4350 4150 4950
+Wire Wire Line
+	4150 5300 4150 5250
+$Comp
+L Connector:Conn_01x03_Male J2
+U 1 1 62EADCC3
+P 4050 5800
+F 0 "J2" V 4204 5612 50  0000 R CNN
+F 1 "Power" V 4113 5612 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 4050 5800 50  0001 C CNN
+F 3 "~" H 4050 5800 50  0001 C CNN
+	1    4050 5800
+	0    -1   -1   0   
+$EndComp
 Connection ~ 4150 5600
 Wire Wire Line
-	4150 5600 4600 5600
+	4150 4950 3950 4950
 Wire Wire Line
-	3800 4950 3800 5050
+	3950 4950 3950 5600
 Wire Wire Line
-	4150 4650 3800 4650
-Connection ~ 4150 4650
-Wire Wire Line
-	4150 4650 4150 4350
+	4300 2900 5850 2900
 $EndSCHEMATC
